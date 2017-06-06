@@ -1,0 +1,178 @@
+[
+	{
+		"ISBN": "1",
+		"title": "The Lightning of forEach loop ",
+		"authors": [
+			"While Looper",
+			"For Loop"
+		],
+        "genres": [
+            "fantasy"
+		],
+        "copies": [],
+        "price": 12.50
+	},
+	{
+        "ISBN": "2",
+        "title": "Functional loop and The array of objects",
+        "authors": [
+            "Vizir Ramirez",
+            "Shone Jorge"
+		],
+        "genres": [
+            "fantasy",
+            "wifi"
+		],
+        "copies": [],
+        "price": 9.50
+	},
+	{
+        "ISBN": "3",
+        "title": "Power of const in a let world",
+        "authors": [
+            "Epstein Warder",
+            "Sera Bob"
+		],
+        "genres": [
+            "Drama"
+		],
+        "copies": [],
+        "price": 7.99
+	},
+	{
+        "ISBN": "4",
+        "title": "Did mongo eat your sql in the dark?",
+        "authors": [
+            "Harder Borgs",
+            "No Table"
+		],
+        "genres": [
+            "action"
+		],
+        "copies": [],
+        "price": 4.99
+	},
+	{
+        "ISBN": "5",
+        "title": "Harry putin and order of The clojure",
+        "authors": [
+            "Vladimir Flambes",
+            "Gregorio Salmon"
+		],
+        "genres": [
+            "action"
+		],
+        "copies": [],
+        "price": 7.99
+	},
+	{
+        "ISBN": "6",
+        "title": "One function and The master of Array",
+        "authors": [
+            "Rob Fore"
+		],
+        "genres": [
+            "action"
+		],
+        "copies": [],
+        "price": 7.99
+	},
+	{
+        "ISBN": "7",
+        "title": "One function and The master of Array",
+        "authors": [
+            "Rob Fore"
+		],
+        "genres": [
+            "action"
+		],
+        "copies": [],
+        "price": 18.99
+	},
+	{
+        "ISBN": "8",
+        "title": "Number and The magic of The String",
+        "authors": [
+            "Float ParseMe"
+		],
+        "genres": [
+            "Sci"
+		],
+        "copies": [],
+        "price": 28.99
+	},
+	{
+        "ISBN": "9",
+        "title": "Module Module on The Wall",
+        "authors": [
+            "Modi Gobain"
+		],
+        "genres": [
+            "Comedy"
+		],
+        "copies": [],
+        "price": 28.99
+	},
+	{
+        "ISBN": "10",
+        "title": "One Object to rule them all",
+        "authors": [
+            "Brendan Heine"
+		],
+        "genres": [
+            "Documentary"
+		],
+        "copies": [],
+        "price": 8.99
+	},
+	{
+        "ISBN": "11",
+        "title": "The fat arrow and The Place of THIS",
+        "authors": [
+            "Douglass Comfortable"
+		],
+        "genres": [
+            "Documentary"
+		],
+        "copies": [],
+        "price": 31.99
+	},
+	{
+        "ISBN": "12",
+        "title": "The Chain of undefined and The power of Null",
+        "authors": [
+            "Bialy Someone",
+            "Rosario Nora"
+		],
+        "genres": [
+            "Documentary"
+		],
+        "copies": [],
+        "price": 81.99
+	},
+	{
+        "ISBN": "13",
+        "title": "Mystery of The hidden NaN",
+        "authors": [
+            "Normand String",
+            "Tora NotANumber"
+		],
+        "genres": [
+            "Documentary"
+		],
+        "copies": [],
+        "price": 11.99
+	},
+	{
+        "ISBN": "14",
+        "title": "Sea of Monsters and The function of function in my array",
+        "authors": [
+            "Postern Guarder"
+		],
+        "genres": [
+            "Drama"
+		],
+        "copies": [],
+        "price": 2.99
+	}
+]
