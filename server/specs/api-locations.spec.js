@@ -35,7 +35,7 @@ describe('-- GET => api/locations Tests --', () => {
 
     });
 
-    xit('it should have the right model schema', (done) => {
+    it('it should have the right model schema', (done) => {
         chai.request(server)
             .get('/api/locations')
             .end((err, res) => {
