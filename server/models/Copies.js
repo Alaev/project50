@@ -6,6 +6,10 @@ const CopySchema = new Schema({
 			type: String,
 			required: true
 		},
+		book: {
+			type: Schema.Types.ObjectId,
+			ref: 'books'
+		},
 		status: {
 			type: String,
 			enum: ['available', 'borrowed', 'late', 'maintenance', 'lost']
@@ -20,7 +24,7 @@ const CopySchema = new Schema({
 		borrowedDate: String,
 		lastBorrower: {
 			type: Schema.Types.ObjectId,
-			ref: 'borrower'
+			ref: 'borrowers'
 		},
 	},
 );

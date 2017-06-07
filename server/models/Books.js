@@ -7,14 +7,16 @@ const BookSchema = new Schema({
 		validate: {
 			validator: ISBN => ISBN.length > 0,
 			message: 'ISBN must contain at least 1 character'
-		}
+		},
+		required: [true, 'ISBN is required']
 	},
 	title: {
 		type: String,
 		validate: {
 			validator: title => title.length > 0,
 			message: 'Title must contain at least 1 character'
-		}
+		},
+		required: [true, 'Title is required']
 	},
 	authors: [String],
 	genres: [String],

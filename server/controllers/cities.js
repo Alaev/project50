@@ -1,4 +1,4 @@
-const City = require('../models/cities');
+const City = require('../models/Cities');
 
 module.exports = {
     index: (req, res, next) => {
