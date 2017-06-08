@@ -9,19 +9,6 @@ const borrowersData = require('./borrowers');
 const librariansData = require('./librarians');
 require('../server/helpers/dbConnect').connect();
 
-function seedBooks(array) {
-  _.forEach(array, function(element) {
-    const newElement = new Book(element);
-    newElement.save()
-      .then(res => {
-        console.log('book added');
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
-}
-
 function seed(array, Collection) {
   _.forEach(array, function(element) {
     const newElement = new Collection(element);
