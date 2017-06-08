@@ -17,7 +17,7 @@ const librarianSchema = new Schema({
 	phone: {
 		type: String,
 		validate: {
-			validator: phoneInput => /[0-9]{3}-[0-9]{7}/.test(phoneInput),
+            validator: phoneInput => /^\d{10}$/.test(phoneInput),
 			message: 'Invalid phone number'
 		}
 	},
@@ -32,4 +32,6 @@ const librarianSchema = new Schema({
 });
 
 const Librarian = mongoose.model('librarian', librarianSchema);
+Librarian.collection.createIndex({ ID: 1 });
+
 module.exports = Librarian;

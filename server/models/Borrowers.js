@@ -17,7 +17,7 @@ const borrowerSchema = new Schema({
 	phone: {
 		type: String,
 		validate: {
-			validator: phoneInput => /[0-9]{3}-[0-9]{7}/.test(phoneInput),
+            validator: phoneInput => /^\d{10}$/.test(phoneInput),
 			message: 'Invalid phone number'
 		}
 	},
@@ -37,4 +37,7 @@ const borrowerSchema = new Schema({
 });
 
 const Borrower = mongoose.model('borrower', borrowerSchema);
+Borrower.collection.createIndex({ ID: 1 });
+
+
 module.exports = Borrower;

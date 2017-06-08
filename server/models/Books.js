@@ -34,5 +34,6 @@ const BookSchema = new Schema({
 });
 
 const Book = mongoose.model('book', BookSchema);
+Book.collection.createIndex({ ISBN: 1 });
 
 module.exports = Book;
