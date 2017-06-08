@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const protocol = 'mongodb';
 const url = 'localhost';
 const port = 27017;
-const db = 'airbnb';
+const db = 'library';
 
 // mongoose connect function
 function connect() {

@@ -8,7 +8,7 @@ const CopySchema = new Schema({
 		},
 		book: {
 			type: Schema.Types.ObjectId,
-			ref: 'books'
+			ref: 'book'
 		},
 		status: {
 			type: String,
@@ -24,7 +24,7 @@ const CopySchema = new Schema({
 		borrowedDate: String,
 		lastBorrower: {
 			type: Schema.Types.ObjectId,
-			ref: 'borrowers'
+			ref: 'borrower'
 		},
 	},
 );

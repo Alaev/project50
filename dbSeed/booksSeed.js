@@ -1,11 +1,12 @@
 //db.getCollection('books').insert(array)
 const Book = require('../server/models/Books');
+const _ = require('lodash');
 require('../server/helpers/dbConnect').connect();
 const booksData = require('./books');
 
 
 function seed(array) {
-	array.forEach(function (element) {
+	_.forEach(function (element) {
 
 		const newElement = new Book(element);
 		newElement.save()

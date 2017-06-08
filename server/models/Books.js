@@ -22,7 +22,7 @@ const BookSchema = new Schema({
 	genres: [String],
 	copies: [{
 		type: Schema.Types.ObjectId,
-		ref: 'copies'
+		ref: 'copy'
 	}],
 	price: {
 		type: Number,

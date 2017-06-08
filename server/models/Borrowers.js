@@ -32,7 +32,7 @@ const borrowerSchema = new Schema({
 	address: String,
 	borrowedBooks: [{
 		type: Schema.Types.ObjectId,
-		ref: 'copies'
+		ref: 'copy'
 	}],
 });
 
