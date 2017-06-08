@@ -1,0 +1,307 @@
+[
+  {
+    "id": "1-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "1-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "2-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "2-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "2-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "3-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "3-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "3-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "4-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "4-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "4-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "5-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "5-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "5-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "5-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "5-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "6-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "6-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "6-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "6-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "6-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "7-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "7-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "7-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "7-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "7-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "8-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "8-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "8-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "8-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "8-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "9-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "9-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "9-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "9-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "9-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "10-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "10-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "10-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "10-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "10-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "11-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "11-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "11-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "11-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "11-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "12-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "12-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "12-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "12-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "12-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "13-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "13-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "13-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "13-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "13-5",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "14-1",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "14-2",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "14-3",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "14-4",
+    "status": "available",
+    "lastBorrower": null
+  },
+  {
+    "id": "14-5",
+    "status": "available",
+    "lastBorrower": null
+  }
+]

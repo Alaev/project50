@@ -1,14 +1,13 @@
 const express = require('express');
-const router = express.Router();
+const router = require('express-promise-router')();
+const books = require('./books');
+const copies = require('./copies');
+const borrowers = require('./borrowers');
+const librarians = require('./librarians');
 
-const locations = require('./locations');
-const cities = require('./cities');
-const reviews = require('./reviews');
-const countries = require('./countries');
-
-router.use('/locations', locations);
-router.use('/cities', cities);
-router.use('/reviews', reviews);
-router.use('/countries', countries);
+router.use('/books', books);
+// router.use('/copies', copies);
+// router.use('/borrowers', borrowers);
+// router.use('/librarians', librarians);
 
 module.exports = router;

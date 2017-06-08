@@ -1,0 +1,68 @@
+[
+  {
+    "ID": "111111111",
+    "name": {
+      "first": "Haim",
+      "last": "Rak Paham Ahat"
+    },
+    "email": "Shalom@best.com",
+    "phone": "0524545455",
+    "address": "Shalom st, PT",
+    "borrowedBooks": []
+  },
+  {
+    "ID": "222222222",
+    "name": {
+      "first": "Hana",
+      "last": "Bat Shel Meleh"
+    },
+    "email": "Hana.batm@god.com",
+    "phone": "0547841345",
+    "address": "The kingdom of all kings",
+    "borrowedBooks": []
+  },
+  {
+    "ID": "333333333",
+    "name": {
+      "first": "Jhon",
+      "last": "Van Snow"
+    },
+    "email": "winter@strong.com",
+    "phone": "0577841345",
+    "address": "The kingdom snow",
+    "borrowedBooks": []
+  },
+  {
+    "ID": "444444444",
+    "name": {
+      "first": "Guizot",
+      "last": "Van Der Place"
+    },
+    "email": "vanderplace@place.com",
+    "phone": "0511841345",
+    "address": "Holland and tomorrow",
+    "borrowedBooks": []
+  },
+  {
+    "ID": "555555555",
+    "name": {
+      "first": "Sara",
+      "last": "Child"
+    },
+    "email": "sarachild@gmail.com",
+    "phone": "0511841345",
+    "address": "The tent",
+    "borrowedBooks": []
+  },
+  {
+    "ID": "666666666",
+    "name": {
+      "first": "Shimon",
+      "last": "Stronghold"
+    },
+    "email": "stronghold@gmail.com",
+    "phone": "0511821377",
+    "address": "The Castle at the SKY",
+    "borrowedBooks": []
+  }
+]

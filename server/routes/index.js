@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
+// const express = require('express');
+// // const router = require('express-promise-router')();
 
-router.get('/', (req, res, next) => {
-    res.status(200).sendFile('index.html');
-});
+// // router.get('/', (req, res, next) => {
+// //   res.status(200).sendFile('index.html');
+// // });
 
-module.exports = router;
+// module.exports = router;

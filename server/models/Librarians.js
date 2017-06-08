@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const borrowerSchema = new Schema({
+
+const librarianSchema = new Schema({
   ID: {
     type: String,
     validate: {
@@ -27,16 +28,10 @@ const borrowerSchema = new Schema({
       message: 'Invalid email address'
     },
     required: [true, 'Email is required']
-  },
-  address: String,
-  borrowedBooks: [{
-    type: Schema.Types.ObjectId,
-    ref: 'copy'
-  }],
+  }
 });
-const Borrower = mongoose.model('borrower', borrowerSchema);
 
-Borrower.collection.createIndex({ ID: 1 });
+const Librarian = mongoose.model('librarian', librarianSchema);
+Librarian.collection.createIndex({ ID: 1 });
 
-
-module.exports = Borrower;
+module.exports = Librarian;
