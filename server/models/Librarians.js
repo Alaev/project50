@@ -17,7 +17,7 @@ const librarianSchema = new Schema({
 	phone: {
 		type: String,
 		validate: {
-            validator: phoneInput => /^\d{10}$/.test(phoneInput),
+			validator: phoneInput => /^\d{10}$/.test(phoneInput),
 			message: 'Invalid phone number'
 		}
 	},

@@ -1,9 +1,6 @@
 const express = require('express');
-
-// Using this router for async await as we dont want to write try catch all the time
 const router = require('express-promise-router')();
 const booksController = require('../../controllers/books');
-
 
 router.route('/')
 	.get(booksController.index)

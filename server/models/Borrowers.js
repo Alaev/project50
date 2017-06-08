@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
 const borrowerSchema = new Schema({
 	ID: {
 		type: String,
@@ -17,7 +16,7 @@ const borrowerSchema = new Schema({
 	phone: {
 		type: String,
 		validate: {
-            validator: phoneInput => /^\d{10}$/.test(phoneInput),
+			validator: phoneInput => /^\d{10}$/.test(phoneInput),
 			message: 'Invalid phone number'
 		}
 	},
@@ -35,8 +34,8 @@ const borrowerSchema = new Schema({
 		ref: 'copy'
 	}],
 });
-
 const Borrower = mongoose.model('borrower', borrowerSchema);
+
 Borrower.collection.createIndex({ ID: 1 });
 
 

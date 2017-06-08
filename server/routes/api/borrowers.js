@@ -1,10 +1,6 @@
 const express = require('express');
 const router = require('express-promise-router')();
-
 const borrowerController = require('../../controllers/borrowers');
-
-
-
 
 router.route('/')
 	.get(borrowerController.index)
@@ -15,11 +11,9 @@ router.route('/:borrowerID')
 	.put(borrowerController.replaceBorrower)
 	.delete(borrowerController.deleteBorrower);
 
-
-/* GET users listing. */
-router.get('/', function (req, res) {
-	db.getAllBorrower(function (err, data) {
-		if (err) {
+router.get('/', function(req, res) {
+	db.getAllBorrower(function(err, data) {
+		if(err) {
 			res.json({ error: 'we have problem to get all borrower' });
 		}
 		else {
@@ -28,7 +22,7 @@ router.get('/', function (req, res) {
 	});
 });
 
-router.post('/', function (req, res) {
+router.post('/', function(req, res) {
 	const newBorrower = {
 		ID: req.body.ID,
 		name: { first: req.body.name.first, last: req.body.name.last },
@@ -38,8 +32,8 @@ router.post('/', function (req, res) {
 		borrowedBooks: req.body.borrowedBooks
 	};
 
-	db.addNewBorrower(newBorrower, function (err, data) {
-		if (err) {
+	db.addNewBorrower(newBorrower, function(err, data) {
+		if(err) {
 			res.json({ error: 'we have problem to add the new borrower' });
 		}
 		else {
@@ -48,14 +42,12 @@ router.post('/', function (req, res) {
 	});
 });
 
-
-
-router.put('/updateBorrowerCopy/:id', function (req, res) {
+router.put('/updateBorrowerCopy/:id', function(req, res) {
 	const id = req.params.id;
 	const data = req.body;
-	// console.log('this is data at put res.body:    ' + data);
-	db.updateBorrowerBooks(id, data, function (err, data) {
-		if (err) {
+
+	db.updateBorrowerBooks(id, data, function(err, data) {
+		if(err) {
 			res.json({ message: 'We had problem to update borrower' });
 		} else {
 			res.json({ message: 'Borrower books array were updated OK were updated successfully' });
@@ -64,12 +56,12 @@ router.put('/updateBorrowerCopy/:id', function (req, res) {
 
 });
 
-router.get('/:select/:input', function (req, res) {
+router.get('/:select/:input', function(req, res) {
 	const input = req.params.input;
 	const select = req.params.select;
 
-	db.getBorrowerBy(select, input, function (err, data) {
-		if (err) {
+	db.getBorrowerBy(select, input, function(err, data) {
+		if(err) {
 			res.json({ error: 'we have problem to get all books' });
 		}
 		else {
@@ -78,10 +70,11 @@ router.get('/:select/:input', function (req, res) {
 	});
 });
 
-router.delete('/:borrower', function (req, res) {
+router.delete('/:borrower', function(req, res) {
 	const borrower = req.params.borrower;
-	db.deleteBorrowerByID(borrower, function (err, data) {
-		if (err) {
+
+	db.deleteBorrowerByID(borrower, function(err, data) {
+		if(err) {
 			res.json({ error: 'we have problem to get all books' });
 		} else {
 			res.json('/borrower');
@@ -89,16 +82,15 @@ router.delete('/:borrower', function (req, res) {
 	});
 });
 
-router.put('/:borrowerID', function (req, res) {
+router.put('/:borrowerID', function(req, res) {
 	const borrower = req.params.borrowerID;
 	let borrowerData = {};
-	for (let key in req.body) {
-
+	for(let key in req.body) {
 		borrowerData[key] = req.body[key];
-
 	}
-	db.updateBorrowerByID(borrower, borrowerData, function (err, data) {
-		if (err) {
+
+	db.updateBorrowerByID(borrower, borrowerData, function(err, data) {
+		if(err) {
 			res.json({ message: 'We had problem to update borrower' });
 		} else {
 			res.json({ message: 'Borrower were updated successfully' });
