@@ -4,4 +4,4 @@ node_js:
 services:
   - mongodb
 before_install:
-	- node ./dbSeed/booksSeed.js
+  - node ./dbSeed/booksSeed.js
