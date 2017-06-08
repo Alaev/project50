@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "mocha --timeout 5000 server/specs/*.spec.js",
-    "server": "nodemon app.js"
+    "test": " NODE_ENV=test mocha --timeout 5000 server/**/*.spec.js",
+    "server": "NODE_ENV=development nodemon app.js",
+    "prod": "NODE_ENV=prod node app.js"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
