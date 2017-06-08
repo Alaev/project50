@@ -24,24 +24,24 @@ app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-	const err = new Error('Not Found');
-	err.status = 404;
-	next(err);
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-	const error = app.get('env') === 'development' ? err : {};
-	const status = err.status || 500;
+  const error = app.get('env') === 'development' ? err : {};
+  const status = err.status || 500;
 
-	// set locals, only providing error in development
-	res.status(status).json({
-		error: {
-			message: error.message
-		}
-	});
-	// response to me
-	console.log(err);
+  // set locals, only providing error in development
+  res.status(status).json({
+    error: {
+      message: error.message
+    }
+  });
+  // response to me
+  console.log(err);
 });
 
 module.exports = app;
