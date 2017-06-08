@@ -1,9 +1,8 @@
-var express = require('express');
-var router = require('express-promise-router')();
-var authConfig = require('../../config/auth-config');
+const express = require('express');
+const router = require('express-promise-router')();
 
 router.get('/:librarian', function (req, res) {
-	var librarian = req.params.librarian;
+	const librarian = req.params.librarian;
 
 	db.getLibrarianByID(librarian, function (err, data) {
 		if (err) {
@@ -16,7 +15,7 @@ router.get('/:librarian', function (req, res) {
 });
 
 router.delete('/:librarian', function (req, res) {
-	var librarian = req.params.librarian;
+	const librarian = req.params.librarian;
 
 	db.deleteLibrarianByID(librarian, function (err, data) {
 		if (err) {
@@ -29,14 +28,13 @@ router.delete('/:librarian', function (req, res) {
 });
 
 router.put('/:librarian', function (req, res) {
-	var librarian = req.params.librarian;
-	var bookData = {};
-	for (var key in req.body) {
-
-		bookData[key] = req.body[key];
+	const librarian = req.params.librarian;
+	let librarianData = {};
+	for (let key in req.body) {
+		librarianData[key] = req.body[key];
 	}
 
-	db.updateLibrarianByID(librarian, bookData, function (err, data) {
+	db.updateLibrarianByID(librarian, librarianData, function (err, data) {
 		res.json(data);
 	});
 

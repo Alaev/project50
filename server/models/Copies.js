@@ -26,7 +26,7 @@ const CopySchema = new Schema({
 			type: Schema.Types.ObjectId,
 			ref: 'borrower'
 		},
-	},
+	}
 );
 
 const Copy = mongoose.model('copy', CopySchema);

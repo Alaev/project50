@@ -29,7 +29,7 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function (req, res) {
-	var newBorrower = {
+	const newBorrower = {
 		ID: req.body.ID,
 		name: { first: req.body.name.first, last: req.body.name.last },
 		email: req.body.email,
@@ -51,8 +51,8 @@ router.post('/', function (req, res) {
 
 
 router.put('/updateBorrowerCopy/:id', function (req, res) {
-	var id = req.params.id;
-	var data = req.body;
+	const id = req.params.id;
+	const data = req.body;
 	// console.log('this is data at put res.body:    ' + data);
 	db.updateBorrowerBooks(id, data, function (err, data) {
 		if (err) {
@@ -65,8 +65,8 @@ router.put('/updateBorrowerCopy/:id', function (req, res) {
 });
 
 router.get('/:select/:input', function (req, res) {
-	var input = req.params.input;
-	var select = req.params.select;
+	const input = req.params.input;
+	const select = req.params.select;
 
 	db.getBorrowerBy(select, input, function (err, data) {
 		if (err) {
@@ -79,7 +79,7 @@ router.get('/:select/:input', function (req, res) {
 });
 
 router.delete('/:borrower', function (req, res) {
-	var borrower = req.params.borrower;
+	const borrower = req.params.borrower;
 	db.deleteBorrowerByID(borrower, function (err, data) {
 		if (err) {
 			res.json({ error: 'we have problem to get all books' });
@@ -90,9 +90,9 @@ router.delete('/:borrower', function (req, res) {
 });
 
 router.put('/:borrowerID', function (req, res) {
-	var borrower = req.params.borrowerID;
-	var borrowerData = {};
-	for (var key in req.body) {
+	const borrower = req.params.borrowerID;
+	let borrowerData = {};
+	for (let key in req.body) {
 
 		borrowerData[key] = req.body[key];
 
