@@ -9,11 +9,11 @@ router.route('/')
 // router.route('/late')
 //   .get(booksController.lateBooks);
 
-// router.route('/:bookISBN')
-//   .get(booksController.getBook)
-//   .put(booksController.replaceBook)
-//   // .patch(booksController.updateBook)
-//   .delete(booksController.deleteBook);
+router.route('/:bookISBN')
+  .get(booksController.getBook)
+  .put(booksController.replaceBook)
+  // .patch(booksController.updateBook)
+  .delete(booksController.deleteBook);
 
 // router.route('/:bookISBN/copy')
 //   .get(booksController.getBookCopies)
