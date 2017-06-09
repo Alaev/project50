@@ -1,11 +1,12 @@
+/* eslint no-console: "off"*/
 const express = require('express');
 const logger = require('morgan');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const path = require('path');
-
 // connect to db
 require('./helpers/dbConnect').connect();
+
 const app = express();
 
 // routers
@@ -23,28 +24,27 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/api', api);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   const err = new Error('Page not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res) => {
   const dev = app.get('env');
   const status = err.status || 500;
-  if(dev === 'test') {
+  if (dev === 'test') {
     res.status('404').json({});
   }
-  if(dev === 'development') {
+  if (dev === 'development') {
     res.status(status).json({
       error: {
         message: err.message
       }
     });
     console.log(err);
-  }
-  else {
+  } else {
     res.status(status).json({
       error: 500
     });
@@ -53,4 +53,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-

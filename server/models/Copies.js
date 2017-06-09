@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 const CopySchema = new Schema({
   ID: {
@@ -24,9 +25,8 @@ const CopySchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'borrower',
     default: null
-  },
-}
-);
+  }
+});
 const Copy = mongoose.model('copy', CopySchema);
 
 Copy.collection.createIndex({ ID: 1 });

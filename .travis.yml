@@ -3,4 +3,12 @@ node_js:
   - "8"
 services:
   - mongodb
+before_script:
+  - yarn install
+script:
+  - node ./dbSeed/seed
+  - sleep 15
+  - yarn format
+  - yarn fix
+  - yarn lint
 
