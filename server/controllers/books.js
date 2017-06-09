@@ -5,13 +5,13 @@ const Book = require('../models/Books');
 module.exports = {
 
   index: async (req, res, next) => {
-    const books = await Book.find({}, '-_id');
+    await Book.find({}, '-_id');
     res.status(200).json(books);
   },
 
   newBook: async (req, res, next) => {
     const newBook = new Book(req.body);
-    const book = await newBook.save();
+    await newBook.save();
 
     res.status(201).json({ message: 'Great news, Book was added to Library' });
   },
