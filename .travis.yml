@@ -4,4 +4,7 @@ node_js:
 services:
   - mongodb
 before_script:
+  - yarn install
+script:
+  - yarn seed
   - sleep 15
