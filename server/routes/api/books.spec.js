@@ -45,13 +45,6 @@ describe('books route test', () => {
     });
   });
 
-  it('should have the right model schema', done => {
-    chai.request(server).get(route).end((err, res) => {
-      res.body[0].should.have.keys('ISBN', 'title', 'authors', 'genres', 'price', '__v');
-      done();
-    });
-  });
-
   it('should return book by ISBN', done => {
     const ISBN = '1';
     chai.request(server).get(`${route}/${ISBN}`).end((err, res) => {
