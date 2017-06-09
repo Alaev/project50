@@ -8,3 +8,7 @@ before_script:
 script:
   - node ./dbSeed/seed
   - sleep 15
+  - yarn format
+  - yarn fix
+  - yarn lint
+
