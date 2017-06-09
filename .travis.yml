@@ -12,6 +12,7 @@ script:
   - yarn fix
   - yarn lint
   - sleep 5
+  - yarn test
 cache:
   directories:
     - node_modules
