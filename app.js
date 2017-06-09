@@ -1,3 +1,4 @@
+/* eslint no-console: "off"*/
 const app = require('./server');
 
 const port = app.get('port') || 3000;

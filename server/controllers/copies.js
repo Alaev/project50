@@ -99,7 +99,7 @@ module.exports = {
   // updateBookCopy: async (req, res) => {
   // const { copyId } = req.params;
   // const newCopy = req.body;
-  // // TODO: why three is a book here?! we shuld use pop
+  // // TODO: why three is a book here?! we should use pop
   // // const copy = await Book.findOneAndUpdate(
   // //   { 'copies.id': copyId },
   // //   {
