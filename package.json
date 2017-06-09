@@ -4,10 +4,19 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
+<<<<<<< HEAD
     "test": "NODE_ENV=test mocha --timeout 5000 server/**/*.spec.js",
     "server": "NODE_ENV=development nodemon app.js",
     "start": "node app.js",
     "seed": "node ./dbSeed/seed"
+=======
+    "test": " NODE_ENV=test mocha --timeout 5000 server/**/*.spec.js",
+    "dev": "NODE_ENV=development nodemon app.js",
+    "start": "node app.js",
+    "format": "prettier --write --single-quote --print-width=120 --tab-width=2 server/**/*.js",
+    "lint": "eslint server/**/*.js",
+    "fix": "eslint server/**/*.js"
+>>>>>>> ddd9e05ab85ae86805e26afaf10f0f5562c2688b
   },
   "dependencies": {
     "body-parser": "^1.17.1",
@@ -21,7 +30,13 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-config-prettier": "^2.1.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-prettier": "^2.1.1",
     "mocha": "^3.3.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "prettier": "^1.4.4"
   }
 }

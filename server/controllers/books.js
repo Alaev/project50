@@ -1,17 +1,14 @@
-/*eslint no-unused-expressions: 0*/
-
 const Book = require('../models/Books');
 
 module.exports = {
-
-  index: async (req, res, next) => {
+  index: async (req, res) => {
     const books = await Book.find({}, '-_id');
     res.status(200).json(books);
   },
 
-  newBook: async (req, res, next) => {
+  newBook: async (req, res) => {
     const newBook = new Book(req.body);
-    const book = await newBook.save();
+    await newBook.save();
 
     res.status(201).json({ message: 'Great news, Book was added to Library' });
   },
@@ -27,38 +24,39 @@ module.exports = {
   //   res.status(200).json(late);
   // },
 
-  // getBook: async (req, res, next) => {
-  //   const { bookISBN } = req.params;
-  //   const book = await Book.findOne({ 'ISBN': bookISBN });
+  getBook: async (req, res) => {
+    const { bookISBN } = req.params;
+    const book = await Book.findOne({ ISBN: bookISBN });
 
-  //   if(!book) {
-  //     return res.status(200).json({ message: 'Can\'t get book, book was not found' });
-  //   }
-  //   res.status(200).json(book);
-  // },
+    if (!book) {
+      res.status(200).json({ message: "Can't get book, book was not found" });
+    } else {
+      res.status(200).json(book);
+    }
+  },
 
-  // // need the full object with all fields of the object
-  // replaceBook: async (req, res, next) => {
-  //   // enforce req.body must have all the fields
-  //   const { bookISBN } = req.params;
-  //   const newBook = req.body;
-  //   const result = await Book.findOneAndUpdate({ 'ISBN': bookISBN }, newBook);
+  replaceBook: async (req, res) => {
+    const { bookISBN } = req.params;
+    const newBook = req.body;
+    const result = await Book.findOneAndUpdate({ ISBN: bookISBN }, newBook);
 
-  //   if(!result) {
-  //     return res.status(404).json({ message: 'Can\'t replaced book, book was not found' });
-  //   }
-  //   res.status(200).json({ message: 'Great news, book was replaced' });
-  // },
+    if (!result) {
+      res.status(404).json({ message: "Can't replaced book, book was not found" });
+    } else {
+      res.status(200).json({ message: 'Great news, book was replaced' });
+    }
+  },
 
-  // deleteBook: async (req, res, next) => {
-  //   const { bookISBN } = req.params;
-  //   const removed = await Book.findOneAndRemove({ 'ISBN': bookISBN });
+  deleteBook: async (req, res) => {
+    const { bookISBN } = req.params;
+    const removed = await Book.findOneAndRemove({ ISBN: bookISBN });
 
-  //   if(!removed) {
-  //     return res.status(200).json({ message: 'Can\'t delete book, book was not found' });
-  //   }
-  //   res.status(200).json({ message: 'Book was deleted!' });
-  // },
+    if (!removed) {
+      res.status(200).json({ message: "Can't delete book, book was not found" });
+    } else {
+      res.status(200).json({ message: 'Book was deleted!' });
+    }
+  }
 
   // getBookCopies: async (req, res, next) => {
   //   const { bookISBN } = req.params;
@@ -88,7 +86,4 @@ module.exports = {
   //   }
   //   res.status(200).json(copy);
   // },
-
-
-
 };

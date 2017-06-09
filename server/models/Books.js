@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
@@ -20,10 +21,12 @@ const BookSchema = new Schema({
   },
   authors: [String],
   genres: [String],
-  copies: [{
-    type: Schema.Types.ObjectId,
-    ref: 'copy'
-  }],
+  copies: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'copy'
+    }
+  ],
   price: {
     type: Number,
     validate: {
