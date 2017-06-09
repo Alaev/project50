@@ -5,7 +5,7 @@ const Book = require('../models/Books');
 module.exports = {
 
   index: async (req, res, next) => {
-    await Book.find({}, '-_id');
+    const books = await Book.find({}, '-_id');
     res.status(200).json(books);
   },
 
