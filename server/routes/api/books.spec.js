@@ -57,7 +57,7 @@ describe('books route test', () => {
     chai.request(server)
       .get(route)
       .end((err, res) => {
-        res.body[0].should.have.keys('ISBN', 'title', 'authors', 'genres', 'price');
+        res.body[0].should.have.keys('ISBN', 'title', 'authors', 'genres', 'price', '__v');
         done();
       });
   });
