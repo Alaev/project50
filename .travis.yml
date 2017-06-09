@@ -6,15 +6,12 @@ services:
 before_script:
   - yarn install
 script:
-<<<<<<< HEAD
-  - yarn seed
-  - sleep 15
-
-=======
   - node ./dbSeed/seed
-  - sleep 15
+  - sleep 5
   - yarn format
   - yarn fix
   - yarn lint
->>>>>>> ddd9e05ab85ae86805e26afaf10f0f5562c2688b
-
+  - sleep 5
+cache:
+  directories:
+    - node_modules
