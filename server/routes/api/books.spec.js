@@ -65,7 +65,7 @@ describe('books route test', () => {
   it('should return book by ISBN', (done) => {
     const ISBN = '1';
     chai.request(server)
-      .get(`/api/books/${ISBN}`)
+      .get(`${route}/${ISBN}`)
       .end((err, res) => {
         res.should.have.status('200');
         res.body.should.be.a('object');
