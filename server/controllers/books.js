@@ -61,7 +61,6 @@ module.exports = {
   // getBookCopies: async (req, res, next) => {
   //   const { bookISBN } = req.params;
   //   const book = await Book.findOne({ 'ISBN': bookISBN }, { _id: 0 });
-
   //   res.status(200).json(book.copies);
   // },
 
