@@ -4,9 +4,10 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "test": " NODE_ENV=test mocha --timeout 5000 server/**/*.spec.js",
+    "test": "NODE_ENV=test mocha --timeout 5000 server/**/*.spec.js",
     "server": "NODE_ENV=development nodemon app.js",
-    "prod": "node app.js"
+    "start": "node app.js",
+    "seed": "node ./dbSeed/seed"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
