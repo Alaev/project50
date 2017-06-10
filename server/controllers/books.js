@@ -1,66 +1,57 @@
 const Book = require('../models/Books');
 
 module.exports = {
-  index: async (req, res) => {
+
+  index: async (req, res, next) => {
     const books = await Book.find({}, '-_id');
     res.status(200).json(books);
   },
 
-  newBook: async (req, res) => {
+  newBook: async (req, res, next) => {
     const newBook = new Book(req.body);
-    await newBook.save();
-
-    res.status(201).json({ message: 'Great news, Book was added to Library' });
+    try{
+      const book = await newBook.save();
+      res.status(200).json({book, message: 'Great news, Book was added to Library' });
+    }catch(error){
+       res.send(error);
+    }
   },
 
-  // lateBooks: async (req, res, next) => {
-  //   const books = await Book.find({ 'copies.status': 'late' },
-  //     { _id: 0, genres: 0, authors: 0, copies: { $elemMatch: { status: 'late' } } });
-  //   const late = books.reduce((prev, curr) => prev.copies.concat(curr.copies));
-
-  //   if(late.length === 0) {
-  //     return res.status(200).json({ message: 'No late Copies was not found' });
-  //   }
-  //   res.status(200).json(late);
-  // },
-
-  getBook: async (req, res) => {
+  getBook: async (req, res, next) => {
     const { bookISBN } = req.params;
-    const book = await Book.findOne({ ISBN: bookISBN });
+    const book = await Book.findOne({ 'ISBN': bookISBN });
 
     if (!book) {
-      res.status(200).json({ message: "Can't get book, book was not found" });
-    } else {
-      res.status(200).json(book);
+      return res.status(200).json({ message: 'Can\'t get book, book was not found' });
     }
+    res.status(200).json(book);
   },
 
-  replaceBook: async (req, res) => {
+  replaceBook: async (req, res, next) => {
     const { bookISBN } = req.params;
     const newBook = req.body;
-    const result = await Book.findOneAndUpdate({ ISBN: bookISBN }, newBook);
+    const replaced = await Book.findOneAndUpdate({ 'ISBN': bookISBN }, newBook, {new: true});
 
-    if (!result) {
-      res.status(404).json({ message: "Can't replaced book, book was not found" });
-    } else {
-      res.status(200).json({ message: 'Great news, book was replaced' });
+    if (!replaced) {
+      return res.status(404).json({ message: 'Can\'t replaced book, book was not found' });
     }
+    res.status(200).json({ replaced, message: 'Great news, book was replaced' });
   },
 
-  deleteBook: async (req, res) => {
+  deleteBook: async (req, res, next) => {
     const { bookISBN } = req.params;
-    const removed = await Book.findOneAndRemove({ ISBN: bookISBN });
+    const removed = await Book.findOneAndRemove({ 'ISBN': bookISBN });
 
     if (!removed) {
-      res.status(200).json({ message: "Can't delete book, book was not found" });
-    } else {
-      res.status(200).json({ message: 'Book was deleted!' });
+      return res.status(200).json({ message: 'Can\'t delete book, book was not found' });
     }
-  }
+    res.status(200).json({removed, message: 'Book was deleted!' });
+  },
 
   // getBookCopies: async (req, res, next) => {
   //   const { bookISBN } = req.params;
   //   const book = await Book.findOne({ 'ISBN': bookISBN }, { _id: 0 });
+
   //   res.status(200).json(book.copies);
   // },
 
@@ -84,5 +75,16 @@ module.exports = {
   //     return res.status(200).json({ message: 'Copy was not found' });
   //   }
   //   res.status(200).json(copy);
+  // },
+
+  // lateBooks: async (req, res, next) => {
+  //   const books = await Book.find({ 'copies.status': 'late' },
+  //     { _id: 0, genres: 0, authors: 0, copies: { $elemMatch: { status: 'late' } } });
+  //   const late = books.reduce((prev, curr) => prev.copies.concat(curr.copies));
+
+  //   if(late.length === 0) {
+  //     return res.status(200).json({ message: 'No late Copies was not found' });
+  //   }
+  //   res.status(200).json(late);
   // },
 };
