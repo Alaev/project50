@@ -6,6 +6,7 @@ module.exports = {
     res.status(200).json(books);
   },
 
+  //used try catch to get the mongoose error to test that books don't POST without schema requirements
   newBook: async (req, res) => {
     const newBook = new Book(req.body);
     try {
