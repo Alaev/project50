@@ -2,7 +2,7 @@ const Book = require('../models/Books');
 
 module.exports = {
   index: async (req, res) => {
-    const books = await Book.find({}, '-_id');
+    const books = await Book.find({}, '-_id -__v');
     res.status(200).json(books);
   },
 
@@ -18,7 +18,7 @@ module.exports = {
 
   getBook: async (req, res) => {
     const { bookISBN } = req.params;
-    const book = await Book.findOne({ ISBN: bookISBN });
+    const book = await Book.findOne({ ISBN: bookISBN }, '-_id -__v');
 
     if (!book) {
       res.status(200).json({ message: "Can't get book, book was not found" });
