@@ -9,23 +9,35 @@ const borrowersData = require('./borrowers');
 const librariansData = require('./librarians');
 require('../server/helpers/dbConnect').connect();
 
-function seed(array, Collection) {
-  _.forEach(array, function(element) {
-    const newElement = new Collection(element);
-    newElement.save()
-      .then(res => {
-        console.log('element added to ' + Collection.collection.collectionName);
-      })
-      .catch(err => {
-        console.log(err.errors);
-      });
-  });
+function seedCollection(array, col) {
+  console.log('seeding ' + col.collection.collectionName);
+  col.insertMany(array)
+    .then(data => console.log('added ' + data.length + ' ' + col.collection.collectionName));
 }
 
-seed(booksData, Book);
-seed(borrowersData, Borrower);
-seed(librariansData, Librarian);
+function seedCopies(dataBooks, dataCopies) {
+  _.forEach(dataCopies, function (element, i, arr) {
+    Book.findOne({ ISBN: element.ID.split("-")[0] })
+      .then(book => {
+        const copy = new Copy({ book: book._id, ID: element.ID, status: 'available' })
+        copy.save()
+          .then(() => book.copies.push(copy._id))
+          .then(() => book.save())
+          .then(() => console.log('copy added'))
+          .catch(err => console.log(err))
+      })
+      .catch(err => console.log(err))
+    });
+}
+
+seedCollection(borrowersData, Borrower);
+seedCollection(librariansData, Librarian);
+seedCollection(booksData, Book);
 
 setTimeout(function() {
-  process.exit(0);
+  seedCopies(booksData, copiesData);
+  setTimeout(function() {
+    process.exit(0);
+  }, 1000);
 }, 1000);
+
