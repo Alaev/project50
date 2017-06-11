@@ -9,7 +9,8 @@
     "start": "node app.js",
     "format": "prettier --write --single-quote --print-width=120 --tab-width=2 server/**/*.js",
     "lint": "eslint server/**/*.js",
-    "fix": "eslint server/**/*.js --fix"
+    "fix": "eslint server/**/*.js --fix",
+		"seed": "node dbSeed/seed.js"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
