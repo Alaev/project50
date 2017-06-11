@@ -31,10 +31,10 @@ function seedCollection(array, col) {
 }
 
 async function seedBooksAndCopies(dataBooks, dataCopies) {
-  console.log("seeding books");
-  let books = await Book.insertMany(dataBooks);//.then(res => seedCopies(copiesData));
-  console.log(books.length + 'books', books);
-  console.log("seeding copies");
+  // console.log("seeding books");
+  // let books = await Book.insertMany(dataBooks);//.then(res => seedCopies(copiesData));
+  // console.log(books.length + 'books', books);
+  // console.log("seeding copies");
 
   _.forEach(dataCopies, function (element, i, arr) {
     Book.findOne({ ISBN: element.ID.split("-")[0] })
@@ -52,9 +52,14 @@ async function seedBooksAndCopies(dataBooks, dataCopies) {
 
 seedCollection(borrowersData, Borrower);
 seedCollection(librariansData, Librarian);
-// seedCollection(booksData, Book);
-seedBooksAndCopies(booksData, copiesData);
+seedCollection(booksData, Book);
 
+setTimeout(function() {
+  seedBooksAndCopies(booksData, copiesData);
+  setTimeout(function() {
+    process.exit(0);
+  }, 1000);
+}, 1000);
 // Book.insertMany(booksData)
 //   .then(() => Borrower.insertMany(borrowersData))
 //   .then(() => seedCopies(copiesData))
@@ -69,6 +74,3 @@ seedBooksAndCopies(booksData, copiesData);
 //     seedCopies(copiesData);
 //   })
 
-setTimeout(function() {
-  process.exit(0);
-}, 1000);
