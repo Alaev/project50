@@ -6,7 +6,7 @@ module.exports = {
     res.status(200).json(books);
   },
 
-  //used try catch to get the mongoose error to test that books don't POST without schema requirements
+  // used try catch to get the mongoose error to test that books don't POST without schema requirements
   newBook: async (req, res) => {
     const newBook = new Book(req.body);
     try {
@@ -23,7 +23,7 @@ module.exports = {
 
     if (!book) {
       res.status(200).json({ message: "Can't get book, book was not found" });
-    }else{
+    } else {
       res.status(200).json(book);
     }
   },
@@ -31,11 +31,13 @@ module.exports = {
   replaceBook: async (req, res) => {
     const { bookISBN } = req.params;
     const newBook = req.body;
-    const replaced = await Book.findOneAndUpdate({ ISBN: bookISBN }, newBook, { new: true });
+    const replaced = await Book.findOneAndUpdate({ ISBN: bookISBN }, newBook, {
+      new: true
+    });
 
     if (!replaced) {
       res.status(404).json({ message: "Can't replaced book, book was not found" });
-    }else{
+    } else {
       res.status(200).json({ replaced, message: 'Great news, book was replaced' });
     }
   },
@@ -46,7 +48,7 @@ module.exports = {
 
     if (!removed) {
       res.status(200).json({ message: "Can't delete book, book was not found" });
-    }else{
+    } else {
       res.status(200).json({ removed, message: 'Book was deleted!' });
     }
   }

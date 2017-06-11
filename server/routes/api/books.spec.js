@@ -1,5 +1,4 @@
 /* global it, describe */
-
 const server = require('../../index');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
@@ -27,7 +26,7 @@ describe('books route test', () => {
   it('should return an array of books ', done => {
     chai.request(server).get(route).end((err, res) => {
       res.body.should.be.a('array');
-      res.body.length.should.not.be.eql(0);
+      res.body.length.should.be.above(10);
       done();
     });
   });
@@ -58,13 +57,13 @@ describe('CRUD book', () => {
       res.body.should.have.property('errors');
       res.body.errors.should.have.property('ISBN');
       res.body.errors.should.have.property('title');
-      res.body.errors.ISBN.should.have.property('kind').eql('required');
-      res.body.errors.title.should.have.property('kind').eql('required');
+      res.body.errors.ISBN.should.have.property('kind').deep.equal('required');
+      res.body.errors.title.should.have.property('kind').deep.equal('required');
       done();
     });
   });
 
-  it('should not add a book with price <= 0', done => {
+  it('should not add a book with price lower or equal 0', done => {
     const book = {
       ISBN,
       title: 'test book',
@@ -101,8 +100,10 @@ describe('CRUD book', () => {
       res.body.book.should.have.property('authors');
       res.body.book.should.have.property('genres');
       res.body.book.should.have.property('price');
+      res.body.book.should.have.property('copies');
       res.body.book.authors.should.be.a('array');
       res.body.book.genres.should.be.a('array');
+      res.body.book.copies.should.be.a('array');
       res.body.book.price.should.be.a('number');
       res.body.book.ISBN.should.equal(ISBN);
       done();
@@ -113,11 +114,13 @@ describe('CRUD book', () => {
     chai.request(server).get(`${route}/${ISBN}`).end((err, res) => {
       res.should.have.status('200');
       res.body.should.be.a('object');
-      res.body.should.have.property('title');
-      res.body.should.have.property('authors');
-      res.body.should.have.property('genres');
-      res.body.should.have.property('price');
+      res.body.should.have.property('title').and.deep.equal('test book');
+      res.body.should.have.property('authors').and.have.lengthOf(2).and.deep.equal(['chai latte', 'choca mocha']);
+      res.body.should.have.property('genres').and.have.lengthOf(2).and.deep.equal(['hot', 'beverages']);
+      res.body.should.have.property('price').and.deep.equal(10);
       res.body.should.have.property('copies');
+
+      // res.body.copies.should.not.be.empty();
       res.body.ISBN.should.equal(ISBN);
       done();
     });
@@ -135,10 +138,10 @@ describe('CRUD book', () => {
     chai.request(server).put(`${route}/${ISBN}`).send(book).end((err, res) => {
       res.should.have.status(200);
       res.body.should.be.a('object');
-      res.body.should.have.property('message').eql('Great news, book was replaced');
+      res.body.should.have.property('message').and.deep.equal('Great news, book was replaced');
       res.body.should.have.property('replaced');
-      res.body.replaced.ISBN.should.equal(ISBN);
-      res.body.replaced.title.should.equal('updated test book');
+      res.body.replaced.ISBN.should.deep.equal(ISBN);
+      res.body.replaced.title.should.deep.equal('updated test book');
       done();
     });
   });
@@ -147,9 +150,9 @@ describe('CRUD book', () => {
     chai.request(server).delete(`${route}/${ISBN}`).end((err, res) => {
       res.should.have.status(200);
       res.body.should.be.a('object');
-      res.body.should.have.property('message').eql('Book was deleted!');
+      res.body.should.have.property('message').deep.equal('Book was deleted!');
       res.body.should.have.property('removed');
-      res.body.removed.should.have.property('ISBN').eql(ISBN);
+      res.body.removed.should.have.property('ISBN').deep.equal(ISBN);
       done();
     });
   });
