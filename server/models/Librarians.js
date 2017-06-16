@@ -1,6 +1,9 @@
-/* eslint no-useless-escape: 0*/
+/* eslint no-useless-escape: 0 */
+/* eslint func-names: ["off", "as-needed"]*/
+
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
+
 const Schema = mongoose.Schema;
 
 const LibrarianSchema = new Schema({
@@ -37,31 +40,34 @@ const LibrarianSchema = new Schema({
   password: String
 });
 
-//can't use arrow function, need to keep the context of 'this'.
-LibrarianSchema.pre('save', function (next) {
+// can't use arrow function, need to keep the context of 'this'.
+LibrarianSchema.pre('save', function(next) {
   const librarian = this;
 
   if (!librarian.isModified('password')) {
     return next();
-  };
+  }
 
-  bcrypt.genSalt(10, (err, salt) => {
+  return bcrypt.genSalt(10, (err, salt) => {
     if (err) {
       return next(err);
     }
 
-    bcrypt.hash(librarian.password, salt, null, (err, hash) => {
+    return bcrypt.hash(librarian.password, salt, null, hash => {
       if (err) {
         return next(err);
       }
 
       librarian.password = hash;
-      next();
+      return next();
     });
   });
 });
 
 const Librarian = mongoose.model('librarian', LibrarianSchema);
+
+// Elad and Mor -> Please clarify why do we need to create index here?
+// can't we just use the objectID?
 Librarian.collection.createIndex({
   ID: 1
 });
