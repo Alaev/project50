@@ -1,7 +1,10 @@
 const router = require('express-promise-router')();
 const booksController = require('../../controllers/books');
 
-router.route('/').get(booksController.index).post(booksController.newBook);
+router
+  .route('/')
+  .get(booksController.index)
+  .post(booksController.newBook);
 
 // router.route('/late')
 //   .get(booksController.lateBooks);
