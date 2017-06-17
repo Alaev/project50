@@ -7,10 +7,22 @@ module.exports = {
   },
 
   newLibrarian: async (req, res) => {
-    const newLibrarian = new Librarian(req.body);
-    await newLibrarian.save();
+    try {
+      const librarian = req.body;
 
-    res.status(201).json({ message: 'Great news, Librarian was added to Library' });
+      const newLibrarian = new Librarian({
+        ID: librarian.ID,
+        name: librarian.name,
+        phone: librarian.phone,
+        email: librarian.email,
+        password: librarian.password
+      });
+      const registeredLibrarian = await newLibrarian.save();
+
+      res.status(200).json(registeredLibrarian);
+    } catch (error) {
+      res.status(206).json('Unable to register a librarian');
+    }
   },
 
   getLibrarian: async (req, res) => {

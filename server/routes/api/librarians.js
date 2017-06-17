@@ -1,44 +1,25 @@
-// const express = require('express');
-// const router = require('express-promise-router')();
+const router = require('express-promise-router')();
+const librariansController = require('../../controllers/librarians');
 
-// router.get('/:librarian', function(req, res) {
-//   const librarian = req.params.librarian;
+// router.route('/').get(booksController.index).post(booksController.newBook);
 
-//   db.getLibrarianByID(librarian, function(err, data) {
-//     if(err) {
-//       res.json({ error: 'we have problem to get all books' });
-//     }
-//     else {
-//       res.json(data);
-//     }
-//   });
-// });
+// router.route('/late')
+//   .get(booksController.lateBooks);
 
-// router.delete('/:librarian', function(req, res) {
-//   const librarian = req.params.librarian;
+router
+  .route('/register')
+  // .get(booksController.getBook)
+  .post(librariansController.newLibrarian)
+  // .patch(booksController.updateBook)
+  // .delete(booksController.deleteBook);
 
-//   db.deleteLibrarianByID(librarian, function(err, data) {
-//     if(err) {
-//       res.json({ error: 'we have problem to get all books' });
-//     }
-//     else {
-//       res.json(data);
-//     }
-//   });
-// });
+// router.route('/:bookISBN/copy')
+//   .get(booksController.getBookCopies)
+//   .post(booksController.newBookCopy);
 
-// router.put('/:librarian', function(req, res) {
-//   const librarian = req.params.librarian;
-//   let librarianData = {};
+// router.route('/:bookISBN/copy/:copyId')
+//   .get(booksController.getCopy)
+//   .put(booksController.updateBookCopy)
+//   .delete(booksController.deleteCopy);
 
-//   for(let key in req.body) {
-//     librarianData[key] = req.body[key];
-//   }
-
-//   db.updateLibrarianByID(librarian, librarianData, function(err, data) {
-//     res.json(data);
-//   });
-
-// });
-
-// module.exports = router;
+module.exports = router;
