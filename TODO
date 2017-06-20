@@ -1,0 +1,13 @@
+// Add joy
+// Joi allows us to create blueprints or schemas for JavaScript objects 
+// (an object that stores information) to ensure validation of key information.
+// Read more about this plugin at https://github.com/hapijs/joi
+
+
+// Add bulma, postcss, scss/stylus to our front end.
+// if we are going with scss need to add fallback for post css
+// alternatives post-css with css next or css modules 
+// https://github.com/css-modules/css-modules
+// as we are working with webpack
+
+// add angularjs as our main front-end
