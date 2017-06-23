@@ -11,3 +11,5 @@
 // as we are working with webpack
 
 // add angularjs as our main front-end
+
+// next: add nyc for code covarage.
