@@ -7,11 +7,11 @@ before_script:
   - yarn install
 script:
   - node ./dbSeed/seed
-  - sleep 5
+  - sleep 2
   - yarn format
   - yarn fix
   - yarn lint
-  - sleep 5
+  - sleep 3
   - yarn test
 cache:
   directories:
