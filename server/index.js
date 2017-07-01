@@ -4,56 +4,32 @@ const logger = require('morgan');
 // const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
+// const index = require('./routes/');
+const api = require('./routes/api/');
 
-// const Librarian = require('./models/Librarians');
 // connect to db
 require('./helpers/dbConnect').connect();
 
 const app = express();
 
-// routers
-// const index = require('./routes/');
-const api = require('./routes/api/');
+// middlewares
+if(!process.env === 'test'){
+  app.use(logger('dev'));
+}
 
-// middleware
-app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// defines CORES
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-  next();
-});
-
-
-// app.post('/register', (req, res) => {
-//   const librarian = req.body; 
-//   const newLibrarian = new Librarian({
-//     ID: librarian.ID,
-//     name: librarian.name,
-//     phone: librarian.phone,
-//     email: librarian.email,
-//     password: librarian.password
-
-//   });
-
-//   newLibrarian.save((err) => {
-//     console.log(newLibrarian);
-//     res.status(200).json(newLibrarian);
-//     if (err) {
-//       console.log(err);
-//     }
-//   });
-// });
+// added  npm cors module
+app.use(cors());
 
 // routers
+
 // app.use('/', index);
 app.use('/api', api);
 
