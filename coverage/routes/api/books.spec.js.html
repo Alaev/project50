@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for routes/api/books.spec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">routes/api</a> books.spec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>95/95</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>22/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>95/95</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* global it, describe */
+const server = require('../../index');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+&nbsp;
+chai.use(chaiHttp);
+chai.should();
+&nbsp;
+describe('books route test', () =&gt; {
+  const route = '/api/books';
+&nbsp;
+  it('should response with stats 200 when calling books route at root level', done =&gt; {
+    chai.request(server).get(route).end((err, res) =&gt; {
+      res.should.have.status('200');
+      done();
+    });
+  });
+&nbsp;
+  it('should response with stats 404 when calling routes that not exists', done =&gt; {
+    chai.request(server).get('/api/book').end((err, res) =&gt; {
+      res.should.have.status('404');
+      done();
+    });
+  });
+&nbsp;
+  it('should return an array of books ', done =&gt; {
+    chai.request(server).get(route).end((err, res) =&gt; {
+      res.body.should.be.a('array');
+      res.body.length.should.be.above(10);
+      done();
+    });
+  });
+&nbsp;
+  it('should have the right model schema', done =&gt; {
+    chai.request(server).get(route).end((err, res) =&gt; {
+      res.body[0].should.have.keys('ISBN', 'title', 'authors', 'genres', 'price', 'copies');
+      res.body[0].should.not.have.keys('_id', '__v');
+      done();
+    });
+  });
+});
+&nbsp;
+describe('CRUD book', () =&gt; {
+  const route = '/api/books';
+  const ISBN = '0';
+&nbsp;
+  it('should not add a book without required fields', done =&gt; {
+    const book = {
+      authors: ['chai latte', 'choca mocha'],
+      genres: ['hot', 'beverages'],
+      price: 10
+    };
+&nbsp;
+    chai.request(server).post(route).send(book).end((err, res) =&gt; {
+      res.should.have.status(200);
+      res.body.should.be.a('object');
+      res.body.should.have.property('errors');
+      res.body.errors.should.have.property('ISBN');
+      res.body.errors.should.have.property('title');
+      res.body.errors.ISBN.should.have.property('kind').deep.equal('required');
+      res.body.errors.title.should.have.property('kind').deep.equal('required');
+      done();
+    });
+  });
+&nbsp;
+  it('should not add a book with price lower or equal 0', done =&gt; {
+    const book = {
+      ISBN,
+      title: 'test book',
+      authors: ['chai latte', 'choca mocha'],
+      genres: ['hot', 'beverages'],
+      price: 0
+    };
+&nbsp;
+    chai.request(server).post(route).send(book).end((err, res) =&gt; {
+      res.should.have.status(200);
+      res.body.should.be.a('object');
+      res.body.should.have.property('errors');
+      res.body.errors.should.have.property('price');
+      res.body.errors.price.should.have.property('value').not.be.above(0);
+      done();
+    });
+  });
+&nbsp;
+  it('should add a book', done =&gt; {
+    const book = {
+      ISBN,
+      title: 'test book',
+      authors: ['chai latte', 'choca mocha'],
+      genres: ['hot', 'beverages'],
+      price: 10
+    };
+&nbsp;
+    chai.request(server).post(route).send(book).end((err, res) =&gt; {
+      res.should.have.status(200);
+      res.body.book.should.be.a('object');
+      res.body.book.should.have.property('_id');
+      res.body.book.should.have.property('ISBN');
+      res.body.book.should.have.property('title');
+      res.body.book.should.have.property('authors');
+      res.body.book.should.have.property('genres');
+      res.body.book.should.have.property('price');
+      res.body.book.should.have.property('copies');
+      res.body.book.authors.should.be.a('array');
+      res.body.book.genres.should.be.a('array');
+      res.body.book.copies.should.be.a('array');
+      res.body.book.price.should.be.a('number');
+      res.body.book.ISBN.should.equal(ISBN);
+      done();
+    });
+  });
+&nbsp;
+  it('should return book by ISBN', done =&gt; {
+    chai.request(server).get(`${route}/${ISBN}`).end((err, res) =&gt; {
+      res.should.have.status('200');
+      res.body.should.be.a('object');
+      res.body.should.have.property('title').and.deep.equal('test book');
+      res.body.should.have.property('authors').and.have.lengthOf(2).and.deep.equal(['chai latte', 'choca mocha']);
+      res.body.should.have.property('genres').and.have.lengthOf(2).and.deep.equal(['hot', 'beverages']);
+      res.body.should.have.property('price').and.deep.equal(10);
+      res.body.should.have.property('copies');
+&nbsp;
+      // res.body.copies.should.not.be.empty();
+      res.body.ISBN.should.equal(ISBN);
+      done();
+    });
+  });
+&nbsp;
+  it('should replace a book', done =&gt; {
+    const book = {
+      ISBN,
+      title: 'updated test book',
+      authors: ['chai latte', 'choca mocha'],
+      genres: ['hot', 'beverages'],
+      price: 10
+    };
+&nbsp;
+    chai.request(server).put(`${route}/${ISBN}`).send(book).end((err, res) =&gt; {
+      res.should.have.status(200);
+      res.body.should.be.a('object');
+      res.body.should.have.property('message').and.deep.equal('Great news, book was replaced');
+      res.body.should.have.property('replaced');
+      res.body.replaced.ISBN.should.deep.equal(ISBN);
+      res.body.replaced.title.should.deep.equal('updated test book');
+      done();
+    });
+  });
+&nbsp;
+  it('should remove a book', done =&gt; {
+    chai.request(server).delete(`${route}/${ISBN}`).end((err, res) =&gt; {
+      res.should.have.status(200);
+      res.body.should.be.a('object');
+      res.body.should.have.property('message').deep.equal('Book was deleted!');
+      res.body.should.have.property('removed');
+      res.body.removed.should.have.property('ISBN').deep.equal(ISBN);
+      done();
+    });
+  });
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Jul 01 2017 16:14:45 GMT+0300 (IDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

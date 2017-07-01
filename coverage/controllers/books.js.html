@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for controllers/books.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">controllers</a> books.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Book = require('../models/Books');
+&nbsp;
+module.exports = {
+  index: async (req, res) =&gt; {
+    const books = await Book.find({}, '-_id -__v');
+    res.status(200).json(books);
+  },
+&nbsp;
+  // used try catch to get the mongoose error to test that books don't POST without schema requirements
+  newBook: async (req, res) =&gt; {
+    const newBook = new Book(req.body);
+    try {
+      const book = await newBook.save();
+      res.status(200).json({ book, message: 'Great news, Book was added to Library' });
+    } catch (error) {
+      res.send(error);
+    }
+  },
+&nbsp;
+  getBook: async (req, res) =&gt; {
+    const { bookISBN } = req.params;
+    const book = await Book.findOne({ ISBN: bookISBN }, '-_id -__v');
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!book) {
+<span class="cstat-no" title="statement not covered" >      res.status(200).json({ message: "Can't get book, book was not found" });</span>
+    } else {
+      res.status(200).json(book);
+    }
+  },
+&nbsp;
+  replaceBook: async (req, res) =&gt; {
+    const { bookISBN } = req.params;
+    const newBook = req.body;
+    const replaced = await Book.findOneAndUpdate({ ISBN: bookISBN }, newBook, {
+      new: true
+    });
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!replaced) {
+<span class="cstat-no" title="statement not covered" >      res.status(404).json({ message: "Can't replaced book, book was not found" });</span>
+    } else {
+      res.status(200).json({ replaced, message: 'Great news, book was replaced' });
+    }
+  },
+&nbsp;
+  deleteBook: async (req, res) =&gt; {
+    const { bookISBN } = req.params;
+    const removed = await Book.findOneAndRemove({ ISBN: bookISBN });
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!removed) {
+<span class="cstat-no" title="statement not covered" >      res.status(200).json({ message: "Can't delete book, book was not found" });</span>
+    } else {
+      res.status(200).json({ removed, message: 'Book was deleted!' });
+    }
+  }
+&nbsp;
+  // getBookCopies: async (req, res, next) =&gt; {
+  //   const { bookISBN } = req.params;
+  //   const book = await Book.findOne({ 'ISBN': bookISBN }, { _id: 0 });
+&nbsp;
+  //   res.status(200).json(book.copies);
+  // },
+&nbsp;
+  // newBookCopy: async (req, res, next) =&gt; {
+  //   const { bookISBN } = req.params;
+  //   const newCopy = req.body;
+  //   const book = await Book.findOne({ 'ISBN': bookISBN });
+&nbsp;
+  //   book.copies.push(newCopy);
+  //   await book.save();
+  //   res.status(201).json(newCopy);
+  // },
+&nbsp;
+  // getCopy: async (req, res, next) =&gt; {
+  //   // enforce req.body must have all the fields
+  //   const { copyId } = req.params;
+  //   const book = await Book.findOne({ 'copies.id': copyId }, { _id: 0, genres: 0, authors: 0, copies: { $elemMatch: { id: copyId } } });
+  //   const copy = book.copies[0];
+&nbsp;
+  //   if(!copy) {
+  //     return res.status(200).json({ message: 'Copy was not found' });
+  //   }
+  //   res.status(200).json(copy);
+  // },
+&nbsp;
+  // lateBooks: async (req, res, next) =&gt; {
+  //   const books = await Book.find({ 'copies.status': 'late' },
+  //     { _id: 0, genres: 0, authors: 0, copies: { $elemMatch: { status: 'late' } } });
+  //   const late = books.reduce((prev, curr) =&gt; prev.copies.concat(curr.copies));
+&nbsp;
+  //   if(late.length === 0) {
+  //     return res.status(200).json({ message: 'No late Copies was not found' });
+  //   }
+  //   res.status(200).json(late);
+  // },
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Jul 01 2017 16:14:45 GMT+0300 (IDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

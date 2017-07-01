@@ -4,13 +4,14 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "test": " NODE_ENV=test mocha --timeout 5000 server/**/*.spec.js",
-    "dev": "NODE_ENV=development nodemon app.js",
+    "test": "cross-env NODE_ENV=test nyc mocha --timeout 5000 server/**/*.spec.js",
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
     "start": "node app.js",
     "format": "prettier --write --single-quote --print-width=120 --tab-width=2 server/**/*.js",
     "lint": "eslint server/**/*.js",
     "fix": "eslint server/**/*.js --fix",
-    "seed": "node dbSeed/seed.js"
+    "seed": "node dbSeed/seed.js",
+    "report": "cross-env NODE_ENV=test nyc --reporter=html mocha --timeout 5000 server/**/*.spec.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
@@ -40,5 +41,12 @@
     "prettier": "^1.4.4",
     "sinon": "^2.3.6",
     "supertest": "^3.0.0"
+  },
+  "nyc": {
+    "include": [
+    ],
+    "exclude": [
+      "server/index.js"
+    ]
   }
 }
