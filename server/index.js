@@ -14,7 +14,7 @@ require('./helpers/dbConnect').connect();
 const app = express();
 
 // middlewares
-if(!process.env === 'test'){
+if(!process.env.NODE_ENV === 'test'){
   app.use(logger('dev'));
 }
 
