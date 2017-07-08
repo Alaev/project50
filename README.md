@@ -1,11 +1,15 @@
 # Project51
+
+### List of packages and technologies used in this project
 - Node 8, 
 - Angularjs, 
 - React-onHold, 
 - React Native. 
-- Rest or GraphQL.
+- Rest API with express.
 - SCSS/Stylus CSS-Modules PostCSS, 
-- Istanbul - NYC for code covarage
+- Istanbul - NYC for code coverage
+- faker.js
+- mocha and chai with chai http
 
 [![Build Status](https://travis-ci.org/Alaev/project51.svg?branch=master)](https://travis-ci.org/Alaev/project51)
 
