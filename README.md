@@ -9,7 +9,8 @@
 - SCSS/Stylus CSS-Modules PostCSS, 
 - Istanbul - NYC for code coverage
 - faker.js
-- mocha and chai with chai http
+- mocha, chai, supertest
+- Mongodb at the moment
 
 [![Build Status](https://travis-ci.org/Alaev/project51.svg?branch=master)](https://travis-ci.org/Alaev/project51)
 
