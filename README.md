@@ -11,6 +11,7 @@
 - faker.js
 - mocha, chai, supertest
 - Mongodb at the moment
+- joi - Object schema description language and validator for JavaScript objects.
 
 [![Build Status](https://travis-ci.org/Alaev/project51.svg?branch=master)](https://travis-ci.org/Alaev/project51)
 
