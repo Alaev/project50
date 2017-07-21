@@ -1,4 +1,4 @@
-// Add joy
+// Add joy - done
 // Joi allows us to create blueprints or schemas for JavaScript objects 
 // (an object that stores information) to ensure validation of key information.
 // Read more about this plugin at https://github.com/hapijs/joi
