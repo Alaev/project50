@@ -41,7 +41,7 @@ yarn test
 
 NYC covarege
 ```bash
-
+yarn 
 ```
 
 
