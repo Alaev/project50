@@ -39,9 +39,9 @@ Tests
 yarn test
 ```
 
-NYC covarege
+NYC covarege report
 ```bash
-yarn 
+yarn report
 ```
 
 
