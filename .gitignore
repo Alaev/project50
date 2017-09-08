@@ -1,5 +1,8 @@
 node_modules/
+<<<<<<< HEAD
 .nyc_output
+=======
+>>>>>>> 32bb0be... init commit
 
 # Compiled source #
 ###################
@@ -35,4 +38,7 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+<<<<<<< HEAD
 .idea/
+=======
+>>>>>>> 32bb0be... init commit

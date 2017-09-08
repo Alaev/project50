@@ -13,4 +13,4 @@
 // add angularjs as our main front-end
 
 // next: add nyc for code covarage - done
-// add sinon for better testing controllers function without http calls
+// add sinon for better testing controllers function without http calls.
