@@ -1,11 +1,8 @@
 root = true
 
 [*]
-<<<<<<< HEAD
 indent_style = space
-=======
 indent_style = tab
->>>>>>> 32bb0be... init commit
 indent_size = 2
 charset = utf-8
 # trim_trailing_whitespace = true
